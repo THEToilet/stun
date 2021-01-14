@@ -1,21 +1,20 @@
-package temp;
+package temp.domain.application;
+
+import temp.controller.UDPHolePunchingServerReceive;
+import temp.presenter.UDPHolePunchingServerSend;
 
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketException;
 
-/**
- * Created by MF17037 on 2017/12/04.
- */
-
 public class UDPHolePunchingServer extends Thread implements UDPHolePunchingServerReceiveListener, UDPHolePunchingServerSendListener {
     final static int SERVER_PORT = 55554;
     private DatagramSocket serverSocket;
-    private UDPHolePanchingFinishListener udpHolePanchingFinishListener;
+    //private UDPHolePanchingFinishListener udpHolePanchingFinishListener;
 
-    UDPHolePunchingServer(UDPHolePanchingFinishListener udpHolePanchingFinishListener) {
-        this.udpHolePanchingFinishListener = udpHolePanchingFinishListener;
+    UDPHolePunchingServer(){//UDPHolePanchingFinishListener udpHolePanchingFinishListener) {
+        //this.udpHolePanchingFinishListener = udpHolePanchingFinishListener;
         try {
             serverSocket = new DatagramSocket(SERVER_PORT);
         } catch (SocketException e) {
@@ -47,8 +46,8 @@ public class UDPHolePunchingServer extends Thread implements UDPHolePunchingServ
 
     @Override
     public void onSendFinishMsg() {
-        System.out.println("temp.UDPHolePunchingServer:最後まで");
-        udpHolePanchingFinishListener.onUDPHolePanchingFinish();
+        System.out.println("temp.domain.application.UDPHolePunchingServer:最後まで");
+       // udpHolePanchingFinishListener.onUDPHolePanchingFinish();
     }
 
 

@@ -1,4 +1,4 @@
-package temp;
+package temp.domain.application;
 
 /**
  * Created by MF17037 on 2017/12/04.

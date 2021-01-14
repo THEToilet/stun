@@ -19,59 +19,59 @@ title __SRC's Class Diagram__\n
   
 
   namespace  {
-    class temp.UDPHolePunchingServer {
+    class temp.domain.application.UDPHolePunchingServer {
         {static} ~ SERVER_PORT : int
         - serverSocket : DatagramSocket
         + onReceiveMsg()
         + onSendFinishMsg()
         + run()
-        ~ temp.UDPHolePunchingServer()
+        ~ temp.domain.application.UDPHolePunchingServer()
         - startUDPHoleServerSend()
     }
   }
   
 
   namespace  {
-    class temp.UDPHolePunchingServerReceive {
+    class temp.controller.UDPHolePunchingServerReceive {
         ~ datagramSocket : DatagramSocket
         + run()
-        ~ temp.UDPHolePunchingServerReceive()
+        ~ temp.controller.UDPHolePunchingServerReceive()
     }
   }
   
 
   namespace  {
-    interface temp.UDPHolePunchingServerReceiveListener {
+    interface temp.domain.application.UDPHolePunchingServerReceiveListener {
         {abstract} + onReceiveMsg()
     }
   }
   
 
   namespace  {
-    class temp.UDPHolePunchingServerSend {
+    class temp.presenter.UDPHolePunchingServerSend {
         - IPAddress : InetAddress
         - datagramSocket : DatagramSocket
         - port : int
         + run()
-        ~ temp.UDPHolePunchingServerSend()
+        ~ temp.presenter.UDPHolePunchingServerSend()
         - sleep()
     }
   }
   
 
   namespace  {
-    interface temp.UDPHolePunchingServerSendListener {
+    interface temp.domain.application.UDPHolePunchingServerSendListener {
         {abstract} + onSendFinishMsg()
     }
   }
   
 
   temp.Main .up.|> temp.UDPHolePanchingFinishListener
-  temp.UDPHolePunchingServer .up.|> temp.UDPHolePunchingServerReceiveListener
-  temp.UDPHolePunchingServer .up.|> temp.UDPHolePunchingServerSendListener
-  temp.UDPHolePunchingServer o-- temp.UDPHolePanchingFinishListener : udpHolePanchingFinishListener
-  temp.UDPHolePunchingServerReceive o-- temp.UDPHolePunchingServerReceiveListener : udpHolePunchingServerReceiveListener
-  temp.UDPHolePunchingServerSend o-- temp.UDPHolePunchingServerSendListener : udpHolePunchingServerSendListener
+  temp.domain.application.UDPHolePunchingServer .up.|> temp.domain.application.UDPHolePunchingServerReceiveListener
+  temp.domain.application.UDPHolePunchingServer .up.|> temp.domain.application.UDPHolePunchingServerSendListener
+  temp.domain.application.UDPHolePunchingServer o-- temp.UDPHolePanchingFinishListener : udpHolePanchingFinishListener
+  temp.controller.UDPHolePunchingServerReceive o-- temp.domain.application.UDPHolePunchingServerReceiveListener : udpHolePunchingServerReceiveListener
+  temp.presenter.UDPHolePunchingServerSend o-- temp.domain.application.UDPHolePunchingServerSendListener : udpHolePunchingServerSendListener
 
 
 right footer

@@ -1,4 +1,4 @@
-package temp;
+package temp.domain.application;
 
 import java.net.DatagramPacket;
 

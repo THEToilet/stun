@@ -1,21 +1,24 @@
 package temp;
 
-public class Main implements UDPHolePanchingFinishListener {
+import temp.domain.application.UDPHolePunchingServer;
 
-	public static void main(String args[]){
-		Main main = new Main();
-		main.start();
-	  }
+public class Main {//implements UDPHolePanchingFinishListener {
 
+    public static void main(String args[]) {
+        Main main = new Main();
+        main.start();
+    }
 
-	private void start() {
-		UDPHolePunchingServer udpHolePunchingServer;
-        udpHolePunchingServer = new UDPHolePunchingServer(this);
+    private void start() {
+        UDPHolePunchingServer udpHolePunchingServer;
+        udpHolePunchingServer = new UDPHolePunchingServer();//this);
         udpHolePunchingServer.start();
-	}
-
+    }
+/*
     @Override
     public void onUDPHolePanchingFinish(){
         //udpHolePunchingServer.start();
     }
+
+ */
 }
