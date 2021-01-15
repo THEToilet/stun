@@ -3,26 +3,13 @@
 title __TEMP's Class Diagram__\n
 
   namespace temp {
-    class temp.EchoTask {
-        - IPAddress : InetAddress
-        - datagramSocket : DatagramSocket
-        - port : int
-        + EchoTask()
-        + run()
-    }
-  }
-  
-
-  namespace temp {
     class temp.Main {
-        {static} ~ MAX_THREADS : int
-        {static} ~ PORT_NUMBER : int
         {static} + main()
+        - start()
     }
   }
   
 
-  temp.EchoTask .up.|> java.lang.Runnable
 
 
 right footer

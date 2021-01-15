@@ -6,6 +6,7 @@ title __CONTROLLER's Class Diagram__\n
     namespace controller {
       class temp.controller.UDPHolePunchingServerReceive {
           ~ datagramSocket : DatagramSocket
+          ~ udpHolePunchingServerReceiveListener : UDPHolePunchingServerReceiveListener
           + run()
           ~ UDPHolePunchingServerReceive()
       }
@@ -13,7 +14,6 @@ title __CONTROLLER's Class Diagram__\n
   }
   
 
-  temp.controller.UDPHolePunchingServerReceive o-- temp.domain.application.UDPHolePunchingServerReceiveListener : udpHolePunchingServerReceiveListener
 
 
 right footer

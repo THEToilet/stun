@@ -8,6 +8,7 @@ title __PRESENTER's Class Diagram__\n
           - IPAddress : InetAddress
           - datagramSocket : DatagramSocket
           - port : int
+          - udpHolePunchingServerSendListener : UDPHolePunchingServerSendListener
           + run()
           ~ UDPHolePunchingServerSend()
           - sleep()
@@ -16,7 +17,6 @@ title __PRESENTER's Class Diagram__\n
   }
   
 
-  temp.presenter.UDPHolePunchingServerSend o-- temp.domain.application.UDPHolePunchingServerSendListener : udpHolePunchingServerSendListener
 
 
 right footer

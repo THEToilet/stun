@@ -3,63 +3,18 @@
 title __UDPHOLEPUNCHINGSERVER's Class Diagram__\n
 
   namespace temp {
+    class temp.EchoTask {
+    }
+  }
+  
+
+  namespace temp {
     class temp.Main {
     }
   }
   
 
-  namespace temp {
-    namespace controller {
-      class temp.controller.UDPHolePunchingServerReceive {
-      }
-    }
-  }
-  
-
-  namespace temp {
-    namespace domain.application {
-      class temp.domain.application.UDPHolePanchingInteractor {
-      }
-    }
-  }
-  
-
-  namespace temp {
-    namespace domain.application {
-      class temp.domain.application.UDPHolePunchingServer {
-      }
-    }
-  }
-  
-
-  namespace temp {
-    namespace domain.application {
-      interface temp.domain.application.UDPHolePunchingServerReceiveListener {
-      }
-    }
-  }
-  
-
-  namespace temp {
-    namespace domain.application {
-      interface temp.domain.application.UDPHolePunchingServerSendListener {
-      }
-    }
-  }
-  
-
-  namespace temp {
-    namespace presenter {
-      class temp.presenter.UDPHolePunchingServerSend {
-      }
-    }
-  }
-  
-
-  temp.controller.UDPHolePunchingServerReceive o-- temp.domain.application.UDPHolePunchingServerReceiveListener : udpHolePunchingServerReceiveListener
-  temp.domain.application.UDPHolePunchingServer .up.|> temp.domain.application.UDPHolePunchingServerReceiveListener
-  temp.domain.application.UDPHolePunchingServer .up.|> temp.domain.application.UDPHolePunchingServerSendListener
-  temp.presenter.UDPHolePunchingServerSend o-- temp.domain.application.UDPHolePunchingServerSendListener : udpHolePunchingServerSendListener
+  temp.EchoTask .up.|> java.lang.Runnable
 
 
 right footer

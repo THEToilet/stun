@@ -4,7 +4,17 @@ title __APPLICATION's Class Diagram__\n
 
   namespace temp {
     namespace domain.application {
+      interface temp.domain.application.IUDPHolePunchingPresenter {
+          {abstract} + complete()
+      }
+    }
+  }
+  
+
+  namespace temp {
+    namespace domain.application {
       class temp.domain.application.UDPHolePanchingInteractor {
+          + handle()
       }
     }
   }
@@ -25,26 +35,7 @@ title __APPLICATION's Class Diagram__\n
   }
   
 
-  namespace temp {
-    namespace domain.application {
-      interface temp.domain.application.UDPHolePunchingServerReceiveListener {
-          {abstract} + onReceiveMsg()
-      }
-    }
-  }
-  
-
-  namespace temp {
-    namespace domain.application {
-      interface temp.domain.application.UDPHolePunchingServerSendListener {
-          {abstract} + onSendFinishMsg()
-      }
-    }
-  }
-  
-
-  temp.domain.application.UDPHolePunchingServer .up.|> temp.domain.application.UDPHolePunchingServerReceiveListener
-  temp.domain.application.UDPHolePunchingServer .up.|> temp.domain.application.UDPHolePunchingServerSendListener
+  temp.domain.application.UDPHolePanchingInteractor .up.|> temp.usecase.holePunching.UDPHolePunchingUseCase
 
 
 right footer
