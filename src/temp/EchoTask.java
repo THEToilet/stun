@@ -6,7 +6,7 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.util.Date;
 
-public class EchoTask implements Runnable{
+public class EchoTask implements Runnable {
     private DatagramSocket datagramSocket;
     private InetAddress IPAddress;
     private int port;
@@ -29,12 +29,6 @@ public class EchoTask implements Runnable{
             e.printStackTrace();
         }
         System.out.printf("%s [%s] :Process finished.\n", new Date(), Thread.currentThread().getName());
-
-        try {
-            datagramSocket.close();
-            System.out.printf("%s [%s] :%s closed.\n", new Date(), Thread.currentThread().getName(), datagramSocket.toString());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        System.out.printf("%s [%s] :%s closed.\n", new Date(), Thread.currentThread().getName(), datagramSocket.toString());
     }
 }
