@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/UDPHolePunchingServer.iml" filepath="$PROJECT_DIR$/UDPHolePunchingServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stun.iml" filepath="$PROJECT_DIR$/stun.iml" />
     </modules>
   </component>
 </project>
