@@ -24,6 +24,7 @@ public class Main {
                 executor.submit(new EchoTask(datagramSocket, IPAddress, port));
             } catch (IOException e) {
                 e.printStackTrace();
+                break;
             }
         }
     }
