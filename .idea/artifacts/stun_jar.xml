@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="stun:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/stun_jar</output-path>
+    <root id="archive" name="stun.jar">
+      <element id="module-output" name="stun" />
+    </root>
+  </artifact>
+</component>

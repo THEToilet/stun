@@ -18,7 +18,7 @@ public class EchoTask implements Runnable {
 
     @Override
     public void run() {
-        String addrPort = IPAddress.getHostAddress().toString() + "-" + port;
+        String addrPort = "{ type : STUN , ip : " + IPAddress.getHostAddress().toString() + ", port : " + port + " }";
         System.out.printf("[%s] %s : Accepted!\n", new Date(), addrPort);
         try {
             datagramSocket.send(new DatagramPacket(addrPort.getBytes(),
