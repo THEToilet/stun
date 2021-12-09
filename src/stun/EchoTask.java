@@ -18,14 +18,14 @@ public class EchoTask implements Runnable {
 
     @Override
     public void run() {
-        String addrPort = "{ type : STUN , ip : " + IPAddress.getHostAddress().toString() + ", port : " + port + " }";
-        System.out.printf("[%s] %s : Accepted!\n", new Date(), addrPort);
+        String adderPort = "{ type : STUN, ip : " + IPAddress.getHostAddress().toString() + ", port : " + port + "}";
+        System.out.printf("[%s] %s : Accepted!\n", new Date(), adderPort);
         try {
-            datagramSocket.send(new DatagramPacket(addrPort.getBytes(),
-                    addrPort.getBytes().length, IPAddress, port));
+            datagramSocket.send(new DatagramPacket(adderPort.getBytes(),
+                    adderPort.getBytes().length, IPAddress, port));
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.printf("[%s] %s : Task succeeded.\n", new Date(), addrPort);
+        System.out.printf("[%s] %s : Task succeeded.\n", new Date(), adderPort);
     }
 }
