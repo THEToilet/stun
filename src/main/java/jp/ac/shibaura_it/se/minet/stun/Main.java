@@ -1,4 +1,4 @@
-package stun;
+package jp.ac.shibaura_it.se.minet.stun;
 
 import java.io.IOException;
 import java.net.*;
