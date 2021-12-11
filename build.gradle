@@ -24,3 +24,12 @@ java {
         languageVersion = JavaLanguageVersion.of(11)
     }
 }
+
+jar {
+    manifest {
+        attributes 'Manifest-Version': '1.0.0'
+        attributes 'Main-Class': 'stun.Main'
+    }
+
+    version '1.0.0'
+}
