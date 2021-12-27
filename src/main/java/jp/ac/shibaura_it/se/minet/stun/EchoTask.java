@@ -22,7 +22,7 @@ public class EchoTask implements Runnable {
     @Override
     public void run() {
         String adderPort = "{ type : STUN, ip : " + IPAddress.getHostAddress().toString() + ", port : " + port + "}";
-        this.logger.debug("[%s] %s : Accepted! " + new Date().toString(), adderPort);
+        this.logger.debug("Accepted!", adderPort, "----");
         try {
             datagramSocket.send(new DatagramPacket(adderPort.getBytes(),
                     adderPort.getBytes().length, IPAddress, port));
