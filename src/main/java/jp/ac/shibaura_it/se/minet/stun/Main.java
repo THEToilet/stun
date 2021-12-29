@@ -26,6 +26,7 @@ public class Main {
                 datagramSocket.receive(receivePacket);
                 InetAddress IPAddress = receivePacket.getAddress();
                 int port = receivePacket.getPort();
+                logger.debug("PACKET-SIZE", StructuredArguments.keyValue("size", receivePacket.getLength()), StructuredArguments.keyValue("rawPacket", receivePacket));
                 executor.submit(new EchoTask(datagramSocket, IPAddress, port, logger));
             } catch (IOException e) {
                 e.printStackTrace();
