@@ -2,11 +2,9 @@ package jp.ac.shibaura_it.se.minet.stun;
 
 import java.io.IOException;
 import java.net.*;
-import java.util.Date;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import net.logstash.logback.argument.StructuredArgument;
 import net.logstash.logback.argument.StructuredArguments;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,7 +19,7 @@ public class Main {
         ExecutorService executor = Executors.newFixedThreadPool(MAX_THREADS);
 
         DatagramSocket datagramSocket = new DatagramSocket(PORT_NUMBER);
-        logger.debug("Server running. port-", StructuredArguments.keyValue("PORT", PORT_NUMBER));
+        logger.debug("Server is running.", StructuredArguments.keyValue("PORT", PORT_NUMBER));
         while (true) {
             DatagramPacket receivePacket = new DatagramPacket(new byte[1024], 1024);
             try {

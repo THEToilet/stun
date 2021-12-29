@@ -3,7 +3,8 @@ package jp.ac.shibaura_it.se.minet.stun;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
-import java.util.Date;
+
+import net.logstash.logback.argument.StructuredArguments;
 import org.slf4j.Logger;
 
 public class EchoTask implements Runnable {
@@ -21,14 +22,14 @@ public class EchoTask implements Runnable {
 
     @Override
     public void run() {
-        String adderPort = "{ type : STUN, ip : " + IPAddress.getHostAddress().toString() + ", port : " + port + "}";
-        this.logger.debug("Accepted!", adderPort, "----");
+        String adderPort = "{ type: STUN, ip: " + IPAddress.getHostAddress().toString() + ", port: " + port + "}";
+        this.logger.debug("Accepted!", StructuredArguments.keyValue("IP", IPAddress.getHostAddress().toString()), StructuredArguments.keyValue("PORT", port));
         try {
             datagramSocket.send(new DatagramPacket(adderPort.getBytes(),
                     adderPort.getBytes().length, IPAddress, port));
         } catch (Exception e) {
             e.printStackTrace();
         }
-        this.logger.debug("[%s] %s : Task succeeded. " + new Date().toString(), adderPort);
+        this.logger.debug("Task Success!", StructuredArguments.keyValue("IP", IPAddress.getHostAddress().toString()), StructuredArguments.keyValue("PORT", port));
     }
 }
